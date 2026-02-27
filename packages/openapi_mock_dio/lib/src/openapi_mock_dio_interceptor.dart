@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
-
-import 'openapi_mock_core.dart';
-import 'openapi_mock_mode.dart';
+import 'package:openapi_mock/openapi_mock.dart';
 
 class OpenApiMockDioInterceptor extends Interceptor {
   OpenApiMockDioInterceptor({

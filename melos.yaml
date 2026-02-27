@@ -17,5 +17,5 @@ scripts:
     description: Run tests for all packages.
 
   format:
-    run: melos exec -c 1 -- dart format lib test example bin
+    run: melos exec -c 1 -- dart format .
     description: Format source files in all packages.

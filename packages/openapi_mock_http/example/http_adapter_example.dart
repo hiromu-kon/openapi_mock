@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:openapi_mock/openapi_mock_http.dart';
+import 'package:openapi_mock_http/openapi_mock_http.dart';
 
 Future<void> main() async {
   final mock = await OpenApiMock.fromFile('example/openapi.yaml');

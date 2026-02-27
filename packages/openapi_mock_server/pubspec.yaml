@@ -1,12 +1,12 @@
-name: openapi_mock
-description: Core OpenAPI-driven mock engine for Dart and Flutter.
+name: openapi_mock_server
+description: Local mock server adapter for openapi_mock.
 version: 0.1.0
 
 environment:
   sdk: ">=3.1.5 <4.0.0"
 
 dependencies:
-  yaml: ^3.1.2
+  openapi_mock: ^0.1.0
 
 dev_dependencies:
   lints: ^2.0.0

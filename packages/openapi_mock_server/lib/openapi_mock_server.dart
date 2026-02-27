@@ -1,4 +1,4 @@
 library;
 
-export 'src/openapi_mock_core.dart';
+export 'package:openapi_mock/openapi_mock.dart';
 export 'src/openapi_mock_server_impl.dart';

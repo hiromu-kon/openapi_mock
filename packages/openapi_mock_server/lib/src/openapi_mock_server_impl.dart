@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'openapi_mock_core.dart';
+import 'package:openapi_mock/openapi_mock.dart';
 
 class OpenApiMockServer {
   OpenApiMockServer._({

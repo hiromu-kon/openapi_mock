@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:openapi_mock/openapi_mock_dio.dart';
+import 'package:openapi_mock_dio/openapi_mock_dio.dart';
 
 Future<void> main() async {
   final dio = Dio(

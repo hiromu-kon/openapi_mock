@@ -2,9 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
-
-import 'openapi_mock_core.dart';
-import 'openapi_mock_mode.dart';
+import 'package:openapi_mock/openapi_mock.dart';
 
 class OpenApiMockHttpClient extends http.BaseClient {
   OpenApiMockHttpClient({

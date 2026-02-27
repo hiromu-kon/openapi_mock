@@ -1,0 +1,3 @@
+dependency_overrides:
+  openapi_mock:
+    path: ../openapi_mock
