@@ -1,0 +1,6 @@
+include: ./all_lint_rules.yaml
+
+linter:
+  rules:
+    # Package examples intentionally use print().
+    avoid_print: false

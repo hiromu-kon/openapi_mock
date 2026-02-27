@@ -1,0 +1,21 @@
+name: openapi_mock
+
+packages:
+  - packages/**
+
+scripts:
+  bootstrap:
+    run: melos bootstrap
+    description: Install dependencies in all packages.
+
+  analyze:
+    run: melos exec -c 1 -- dart analyze
+    description: Run static analysis for all packages.
+
+  test:
+    run: melos exec -c 1 -- dart test
+    description: Run tests for all packages.
+
+  format:
+    run: melos exec -c 1 -- dart format lib test example bin
+    description: Format source files in all packages.
