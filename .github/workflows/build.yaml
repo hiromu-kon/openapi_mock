@@ -1,0 +1,71 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+
+      - name: Install melos
+        run: dart pub global activate melos
+
+      - name: Add pub cache to PATH
+        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
+      - name: Bootstrap
+        run: melos bootstrap
+
+      - name: Check format
+        run: melos exec -c 1 -- dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze
+        run: melos run analyze
+
+      - name: Test
+        run: melos run test
+
+      - name: Coverage
+        run: melos run test:coverage
+
+      - name: Install coverage formatter
+        run: dart pub global activate coverage
+
+      - name: Merge lcov reports
+        run: |
+          set -euo pipefail
+          mkdir -p coverage
+          : > coverage/lcov.info
+
+          for pkg in packages/*; do
+            if [ -d "$pkg/coverage" ] && [ -d "$pkg/lib" ]; then
+              "$HOME/.pub-cache/bin/format_coverage" \
+                --packages="$pkg/.dart_tool/package_config.json" \
+                --report-on="$pkg/lib" \
+                --in="$pkg/coverage" \
+                --out="$pkg/coverage/lcov.info"
+              cat "$pkg/coverage/lcov.info" >> coverage/lcov.info
+            fi
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-lcov
+          path: coverage/lcov.info
+
+      - uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/lcov.info
+          fail_ci_if_error: false

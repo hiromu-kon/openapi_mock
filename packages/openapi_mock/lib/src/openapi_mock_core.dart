@@ -230,9 +230,11 @@ class OpenApiMock {
       'application/yaml',
       'text/yaml',
     };
-    final jsonEntry = content.entries.firstWhere(
+    final entries = content.entries.cast<MapEntry<dynamic, dynamic>>();
+    final firstEntry = entries.first;
+    final jsonEntry = entries.firstWhere(
       (entry) => preferred.contains(entry.key.toString().toLowerCase()),
-      orElse: () => content.entries.first,
+      orElse: () => firstEntry,
     );
     final mediaType = jsonEntry.key.toString();
     final mediaSchema = jsonEntry.value;

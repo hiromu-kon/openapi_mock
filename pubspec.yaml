@@ -1,8 +1,0 @@
-name: openapi_mock_workspace
-publish_to: none
-
-environment:
-  sdk: ">=3.1.5 <4.0.0"
-
-dev_dependencies:
-  melos: ^3.4.0

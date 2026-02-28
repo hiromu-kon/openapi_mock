@@ -1,0 +1,49 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - github-actions
+
+  - package-ecosystem: pub
+    directory: /packages/openapi_mock
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - dart
+
+  - package-ecosystem: pub
+    directory: /packages/openapi_mock_cli
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - dart
+
+  - package-ecosystem: pub
+    directory: /packages/openapi_mock_dio
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - dart
+
+  - package-ecosystem: pub
+    directory: /packages/openapi_mock_http
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - dart
+
+  - package-ecosystem: pub
+    directory: /packages/openapi_mock_server
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - dart

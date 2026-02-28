@@ -16,6 +16,10 @@ scripts:
     run: melos exec -c 1 -- dart test
     description: Run tests for all packages.
 
+  test:coverage:
+    run: melos exec -c 1 -- dart test --coverage=coverage
+    description: Run tests with coverage output for all packages.
+
   format:
     run: melos exec -c 1 -- dart format .
     description: Format source files in all packages.
