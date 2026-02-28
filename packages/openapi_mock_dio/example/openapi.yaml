@@ -7,6 +7,7 @@ paths:
     get:
       responses:
         '200':
+          description: Successful response
           content:
             application/json:
               example:
@@ -16,6 +17,7 @@ paths:
     get:
       responses:
         '200':
+          description: Successful response
           content:
             application/json:
               example:

@@ -5,8 +5,15 @@ info:
 paths:
   /users/{id}:
     get:
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
       responses:
         '200':
+          description: Successful response
           content:
             application/json:
               example:
@@ -16,6 +23,7 @@ paths:
     get:
       responses:
         '200':
+          description: Successful response
           content:
             application/json:
               example:
