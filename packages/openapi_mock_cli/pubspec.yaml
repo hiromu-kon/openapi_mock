@@ -1,6 +1,8 @@
 name: openapi_mock_cli
 description: CLI for resolving OpenAPI example responses via openapi_mock.
 version: 0.0.1
+repository: https://github.com/hiromu-kon/openapi_mock/tree/main/packages/openapi_mock_cli
+homepage: https://github.com/hiromu-kon/openapi_mock
 
 environment:
   sdk: ">=3.1.5 <4.0.0"

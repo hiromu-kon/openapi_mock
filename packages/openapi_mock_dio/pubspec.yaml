@@ -1,6 +1,8 @@
 name: openapi_mock_dio
 description: Dio interceptor adapter for openapi_mock.
 version: 0.0.1
+repository: https://github.com/hiromu-kon/openapi_mock/tree/main/packages/openapi_mock_dio
+homepage: https://github.com/hiromu-kon/openapi_mock
 
 environment:
   sdk: ">=3.1.5 <4.0.0"
