@@ -1,6 +1,6 @@
 name: openapi_mock
 description: Core OpenAPI-driven mock engine for Dart and Flutter.
-version: 0.1.0
+version: 0.0.1
 
 environment:
   sdk: ">=3.1.5 <4.0.0"

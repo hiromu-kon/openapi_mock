@@ -3,6 +3,7 @@
 [![Build](https://github.com/hiromu-kon/openapi_mock/actions/workflows/build.yaml/badge.svg)](https://github.com/hiromu-kon/openapi_mock/actions/workflows/build.yaml)
 [![Coverage](https://codecov.io/gh/hiromu-kon/openapi_mock/graph/badge.svg)](https://codecov.io/gh/hiromu-kon/openapi_mock)
 [![pub package](https://img.shields.io/pub/v/openapi_mock.svg)](https://pub.dev/packages/openapi_mock)
+[![openapi_mock_cli](https://img.shields.io/pub/v/openapi_mock_cli.svg)](https://pub.dev/packages/openapi_mock_cli)
 [![openapi_mock_http](https://img.shields.io/pub/v/openapi_mock_http.svg)](https://pub.dev/packages/openapi_mock_http)
 [![openapi_mock_dio](https://img.shields.io/pub/v/openapi_mock_dio.svg)](https://pub.dev/packages/openapi_mock_dio)
 [![openapi_mock_server](https://img.shields.io/pub/v/openapi_mock_server.svg)](https://pub.dev/packages/openapi_mock_server)
@@ -21,10 +22,10 @@ Monorepo layout:
 ## Packages
 
 - `openapi_mock`: core engine published to pub.dev
+- `openapi_mock_cli`: CLI package published to pub.dev
 - `openapi_mock_http`: `package:http` adapter published to pub.dev
 - `openapi_mock_dio`: `dio` adapter published to pub.dev
 - `openapi_mock_server`: local server adapter published to pub.dev
-- `openapi_mock_cli`: workspace-only CLI package (`publish_to: none`)
 
 ## Melos
 
@@ -67,6 +68,7 @@ License:
 Publish tag format:
 
 - `openapi_mock-v<version>`
+- `openapi_mock_cli-v<version>`
 - `openapi_mock_http-v<version>`
 - `openapi_mock_dio-v<version>`
 - `openapi_mock_server-v<version>`

@@ -1,4 +1,4 @@
-## 0.1.0
+## 0.0.1
 
 - Initial MVP for `openapi_mock` core.
 - Added OpenAPI-driven mock resolver with:
