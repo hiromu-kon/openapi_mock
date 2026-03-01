@@ -4,6 +4,8 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    assignees:
+      - hiromu-kon
     labels:
       - dependencies
       - github-actions
@@ -12,6 +14,8 @@ updates:
     directory: /packages/openapi_mock
     schedule:
       interval: weekly
+    assignees:
+      - hiromu-kon
     labels:
       - dependencies
       - dart
@@ -20,6 +24,8 @@ updates:
     directory: /packages/openapi_mock_cli
     schedule:
       interval: weekly
+    assignees:
+      - hiromu-kon
     labels:
       - dependencies
       - dart
@@ -28,6 +34,8 @@ updates:
     directory: /packages/openapi_mock_dio
     schedule:
       interval: weekly
+    assignees:
+      - hiromu-kon
     labels:
       - dependencies
       - dart
@@ -36,6 +44,8 @@ updates:
     directory: /packages/openapi_mock_http
     schedule:
       interval: weekly
+    assignees:
+      - hiromu-kon
     labels:
       - dependencies
       - dart
@@ -44,6 +54,8 @@ updates:
     directory: /packages/openapi_mock_server
     schedule:
       interval: weekly
+    assignees:
+      - hiromu-kon
     labels:
       - dependencies
       - dart

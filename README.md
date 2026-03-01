@@ -11,25 +11,33 @@
 
 OpenAPI-driven mock tooling for Dart, organized as a Melos monorepo.
 
-Monorepo layout:
-
-- `packages/openapi_mock`: core engine
-- `packages/openapi_mock_http`: `package:http` adapter
-- `packages/openapi_mock_dio`: `dio` adapter
-- `packages/openapi_mock_server`: local server adapter
-- `packages/openapi_mock_cli`: CLI package
-
 ## Packages
 
-- `openapi_mock`: core engine published to pub.dev
-- `openapi_mock_cli`: CLI package published to pub.dev
-- `openapi_mock_http`: `package:http` adapter published to pub.dev
-- `openapi_mock_dio`: `dio` adapter published to pub.dev
-- `openapi_mock_server`: local server adapter published to pub.dev
+- [`openapi_mock`](https://pub.dev/packages/openapi_mock): core engine for resolving mock responses from an OpenAPI document
+- [`openapi_mock_http`](https://pub.dev/packages/openapi_mock_http): `package:http` adapter, also usable from `chopper`
+- [`openapi_mock_dio`](https://pub.dev/packages/openapi_mock_dio): `dio` interceptor adapter
+- [`openapi_mock_server`](https://pub.dev/packages/openapi_mock_server): local HTTP mock server
+- [`openapi_mock_cli`](https://pub.dev/packages/openapi_mock_cli): CLI for resolving a mock response from `method + path`
+
+Repository layout:
+
+- `packages/openapi_mock`
+- `packages/openapi_mock_http`
+- `packages/openapi_mock_dio`
+- `packages/openapi_mock_server`
+- `packages/openapi_mock_cli`
+
+## Which package should I use?
+
+- App code that needs OpenAPI-based mock resolution: `openapi_mock`
+- `package:http` or `chopper` integration: `openapi_mock_http`
+- `dio` integration: `openapi_mock_dio`
+- Local mock server with `baseUrl` switching: `openapi_mock_server`
+- Command-line usage in CI or local development: `openapi_mock_cli`
 
 ## Melos
 
-Setup (from repository root):
+Setup from repository root:
 
 ```bash
 dart pub global activate melos
@@ -44,26 +52,21 @@ melos run test
 melos run test:coverage
 ```
 
-Note: publishable packages use hosted dependencies in `pubspec.yaml`; local monorepo linking is managed with `pubspec_overrides.yaml`.
 Coverage output is generated per package under `coverage/`.
 GitHub Actions also uploads `coverage/lcov.info` as an artifact. If `CODECOV_TOKEN` is set in repository secrets, coverage is uploaded to Codecov.
 
 ## Release workflow
 
-- `build.yaml`: formatting, analyze, test, coverage, publish dry-run
+- `build.yaml`: formatting, analyze, test, coverage
 - `publish.yaml`: tag-based pub.dev publish workflow
+- `.github/actions/pub-publish`: shared composite action for package publishing
 
 `build.yaml` runs format, analyze, test, and coverage on the workspace.
+`publish.yaml` is intended for pub.dev Trusted Publishing (`id-token: write`).
 
 Repository secrets:
 
 - `CODECOV_TOKEN`: optional when using token-based Codecov upload
-
-License:
-
-- `MIT`
-
-`publish.yaml` is intended for pub.dev Trusted Publishing (`id-token: write`).
 
 Publish tag format:
 
@@ -73,7 +76,7 @@ Publish tag format:
 - `openapi_mock_dio-v<version>`
 - `openapi_mock_server-v<version>`
 
-Quick start:
+## Quick start
 
 ```bash
 cd packages/openapi_mock_cli
